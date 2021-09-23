@@ -14,3 +14,6 @@ flux
 *.tfstate.*
 # Secrets files
 server/**/secrets.*
+# Python
+env/
+.python-version
