@@ -1,0 +1,16 @@
+# Editors
+.vscode/
+# Trash
+.DS_Store
+Thumbs.db
+# Binaries
+bin
+flux
+*.iso
+# Local .terraform directories
+**/.terraform/*
+# .tfstate files
+*.tfstate
+*.tfstate.*
+# Secrets files
+server/**/secrets.*
