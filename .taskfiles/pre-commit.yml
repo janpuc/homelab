@@ -6,10 +6,10 @@ tasks:
     desc: Initialize pre-commit hooks
     cmds:
       - pre-commit install-hooks
-    # silent: true
+    silent: true
 
   run:
     desc: Run pre-commit
     cmds:
       - pre-commit run --all-files
-    # silent: true
+    silent: true
