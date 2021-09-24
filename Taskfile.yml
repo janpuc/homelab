@@ -1,5 +1,12 @@
 ---
 version: "3"
 
+vars:
+  PROJECT_DIR:
+    sh: "git rev-parse --show-toplevel"
+  SERVER_DIR: "{{.PROJECT_DIR}}/server"
+
 includes:
-  pre-commit: .taskfiles/pre-commit.yml
+  ansible: .taskfiles/ansible.yaml
+  pre-commit: .taskfiles/pre-commit.yaml
+  terraform: .taskfiles/terraform.yaml

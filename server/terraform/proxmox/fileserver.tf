@@ -1,6 +1,6 @@
 resource "proxmox_vm_qemu" "fileserver" {
   name        = "fileserver"
-  target_node = var.target_node
+  target_node = var.proxmox_node
   vmid        = 801
 
   clone   = "debian-cloudinit"
@@ -15,9 +15,9 @@ resource "proxmox_vm_qemu" "fileserver" {
     inline = ["echo provisioned"]
 
     connection {
-      host = var.fileserver_ip_address
-      type = "ssh"
-      user = var.fileserver_user
+      host  = var.fileserver_ip_address
+      type  = "ssh"
+      user  = var.fileserver_user
       agent = true
     }
   }

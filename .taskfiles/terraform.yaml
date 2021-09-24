@@ -1,0 +1,42 @@
+---
+version: "3"
+
+vars:
+  TERRAFORM_DIR: "{{.SERVER_DIR}}/terraform/proxmox"
+
+tasks:
+  apply:
+    desc: Apply terraform changes
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} apply"
+    silent: true
+
+  apply:fileserver:
+    desc: Apply terraform changes for fileserver resource 
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} apply -target=proxmox_vm_qemu.fileserver"
+    silent: true
+
+  destroy:
+    desc: Destroy terraform resources
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} destroy"
+    silent: true
+
+  destroy:fileserver:
+    desc: Destroy fileserver terraform resource 
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} destroy -target=proxmox_vm_qemu.fileserver"
+    silent: true
+
+  init:
+    desc: Initialize terraform
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} init"
+    silent: true
+
+  plan:
+    desc: Plan terraform chagnes
+    cmds:
+      - "terraform -chdir={{.TERRAFORM_DIR}} plan"
+    silent: true
