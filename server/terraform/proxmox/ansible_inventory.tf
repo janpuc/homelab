@@ -5,5 +5,5 @@ resource "local_file" "ansible_inventory" {
       fileserver_user = var.fileserver_user
     }
   )
-  filename = "../../ansible/inventory/hosts.yaml"
+  filename = "../../ansible/inventory/hosts.yml"
 }

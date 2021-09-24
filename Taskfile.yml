@@ -7,6 +7,6 @@ vars:
   SERVER_DIR: "{{.PROJECT_DIR}}/server"
 
 includes:
-  ansible: .taskfiles/ansible.yaml
-  pre-commit: .taskfiles/pre-commit.yaml
-  terraform: .taskfiles/terraform.yaml
+  ansible: .taskfiles/ansible.yml
+  pre-commit: .taskfiles/pre-commit.yml
+  terraform: .taskfiles/terraform.yml
