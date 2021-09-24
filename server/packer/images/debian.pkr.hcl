@@ -18,7 +18,7 @@ source "proxmox" "debian_cloudinit" {
   disks {
     disk_size         = "1800G"
     storage_pool      = "local-hdd"
-    storage_pool_type = "lvm"
+    storage_pool_type = "lvm-thin"
   }
   memory = 2048
   network_adapters {

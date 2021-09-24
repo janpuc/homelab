@@ -1,7 +1,7 @@
 ---
 version: "3"
 
-vars: 
+vars:
   ANSIBLE_DIR: "{{.SERVER_DIR}}/ansible"
 
 tasks:

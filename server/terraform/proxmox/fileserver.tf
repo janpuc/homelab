@@ -23,7 +23,7 @@ resource "proxmox_vm_qemu" "fileserver" {
   }
 
   provisioner "local-exec" {
-    command = ""
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --user ${var.fileserver_user} --inventory '../../ansible/inventory' ../../ansible/playbooks/storage/fileserver.yml"
   }
 
   depends_on = [local_file.ansible_inventory]
