@@ -52,6 +52,16 @@ tasks:
         init
     silent: true
 
+  upgrade:
+    desc: Upgrade terraform providers
+    cmds:
+      - >
+        terraform
+        -chdir={{.TERRAFORM_DIR}}
+        init
+        -upgrade
+    silent: true
+
   plan:
     desc: Plan terraform chagnes
     cmds:

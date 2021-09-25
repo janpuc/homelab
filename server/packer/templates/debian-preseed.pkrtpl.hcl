@@ -108,6 +108,15 @@ d-i pkgsel/include string openssh-server qemu-guest-agent cloud-init
 # Allowed values: none, safe-upgrade, full-upgrade
 d-i pkgsel/upgrade select full-upgrade
 
+d-i preseed/late_command string \
+  in-target rm -rf /var/lib/apt/lists ; \
+  in-target apt-get update ; \
+  in-target apt-get -y upgrade ; \
+  in-target apt-get -y dist-upgrade ; \
+  in-target apt-get -y autoremove ; \
+  in-target apt-get autoclean ; \
+  in-target apt-get clean
+
 # Policy for applying updates. May be "none" (no automatic updates),
 # "unattended-upgrades" (install security updates automatically), or
 # "landscape" (manage system with Landscape).

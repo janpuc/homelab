@@ -16,7 +16,8 @@ source "proxmox" "debian_cloudinit" {
   cloud_init              = true
   cloud_init_storage_pool = "local-lvm"
   disks {
-    disk_size         = "1800G"
+    disk_size         = "800G"
+    format            = "qcow2"
     storage_pool      = "local-hdd"
     storage_pool_type = "lvm-thin"
   }
