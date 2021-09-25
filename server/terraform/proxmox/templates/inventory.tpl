@@ -1,5 +1,11 @@
 ---
 
+kubernetes:
+  hosts:
+    master:
+      ansible_host: ${master_node_ip}
+      ansible_user: ${k3os_user}
+
 storage:
   hosts:
     fileserver:

@@ -34,3 +34,14 @@ variable "fileserver_user" {
   description = "User account of the fileserver."
   default     = "debian"
 }
+
+variable "master_node_ip_address" {
+  type        = string
+  description = "IP address of k3os node."
+}
+
+variable "k3os_user" {
+  type        = string
+  description = "User for the k3os machine."
+  default     = "rancher"
+}
