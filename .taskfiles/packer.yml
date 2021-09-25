@@ -23,3 +23,13 @@ tasks:
         --only=proxmox.debian_cloudinit
         server/packer/images
     silent: true
+
+  k3os:
+    descs: Build k3os packer image
+    cmds:
+      - >
+        packer
+        build
+        --only=proxmox.k3os_cloudinit
+        server/packer/images
+    silent: true
