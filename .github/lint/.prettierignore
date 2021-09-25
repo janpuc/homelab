@@ -1,2 +1,4 @@
 *.sops.*
 gotk-components.yaml
+*.tfstate
+*.json

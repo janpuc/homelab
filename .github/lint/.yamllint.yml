@@ -1,6 +1,7 @@
 ---
 ignore: |
   *.sops.*
+  env/**/*.y*ml
 extends: default
 rules:
   truthy:

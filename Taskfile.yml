@@ -9,6 +9,7 @@ vars:
 includes:
   ansible: .taskfiles/ansible.yml
   format: .taskfiles/format.yml
+  lint: .taskfiles/lint.yml
   packer: .taskfiles/packer.yml
   pre-commit: .taskfiles/pre-commit.yml
   terraform: .taskfiles/terraform.yml
