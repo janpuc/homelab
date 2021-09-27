@@ -102,8 +102,8 @@ d-i apt-setup/security_host string security.debian.org
 
 ### Package selection
 # Individual additional packages to install
-tasksel tasksel/first multiselect ssh-server minimal
-d-i pkgsel/include string openssh-server qemu-guest-agent cloud-init
+tasksel tasksel/first multiselect ssh-server minimal curl
+d-i pkgsel/include string openssh-server qemu-guest-agent cloud-init curl
 # Whether to upgrade packages after debootstrap.
 # Allowed values: none, safe-upgrade, full-upgrade
 d-i pkgsel/upgrade select full-upgrade

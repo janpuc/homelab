@@ -21,10 +21,4 @@ resource "proxmox_vm_qemu" "pihole" {
       agent = true
     }
   }
-
-  provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --user ${var.pihole_user} --inventory '../../ansible/inventory' ../../ansible/playbooks/pihole/pihole.yml"
-  }
-
-  depends_on = [local_file.ansible_inventory]
 }
