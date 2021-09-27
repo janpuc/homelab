@@ -1,6 +1,6 @@
 proxmox_ip = "192.168.0.5"
 proxmox_username = "terraform@pve"
 proxmox_node = "proxmox"
-nameserver = "1.1.1.1"
+nameserver = "192.168.0.2"
 master_node_ip = "192.168.0.10"
 github_username = "janpuc"

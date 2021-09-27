@@ -14,13 +14,23 @@ tasks:
         server/packer/images
     silent: true
 
-  debian:
-    descs: Build debian packer image
+  fileserver:
+    descs: Build fileserver packer image
     cmds:
       - >
         packer
         build
-        --only=proxmox.debian_cloudinit
+        --only=proxmox.fileserver_cloudinit
+        server/packer/images
+    silent: true  
+    
+  pihole:
+    descs: Build pihole packer image
+    cmds:
+      - >
+        packer
+        build
+        --only=proxmox.pihole_cloudinit
         server/packer/images
     silent: true
 

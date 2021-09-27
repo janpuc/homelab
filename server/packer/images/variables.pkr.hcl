@@ -1,3 +1,8 @@
+variable "domain" {
+  type        = string
+  description = "Domain name for the network."
+}
+
 variable "proxmox_ip" {
   type        = string
   description = "The IP of the proxmox server."

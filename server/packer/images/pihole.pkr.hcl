@@ -1,9 +1,4 @@
-variable "domain" {
-  type        = string
-  description = "Domain name for the network."
-}
-
-source "proxmox" "debian_cloudinit" {
+source "proxmox" "pihole_cloudinit" {
   proxmox_url              = "https://${var.proxmox_ip}:${var.proxmox_port}/api2/json"
   username                 = var.proxmox_username
   password                 = var.proxmox_password
@@ -16,12 +11,12 @@ source "proxmox" "debian_cloudinit" {
   cloud_init              = true
   cloud_init_storage_pool = "local-lvm"
   disks {
-    disk_size         = "800G"
+    disk_size         = "10G"
     format            = "qcow2"
-    storage_pool      = "local-hdd"
+    storage_pool      = "local-lvm"
     storage_pool_type = "lvm-thin"
   }
-  memory = 2048
+  memory = 1024
   network_adapters {
     model  = "virtio"
     bridge = "vmbr0"
@@ -32,10 +27,10 @@ source "proxmox" "debian_cloudinit" {
   ssh_username     = "debian"
   ssh_password     = "debian"
   ssh_wait_timeout = "10000s"
-  template_name    = "debian-cloudinit"
+  template_name    = "pihole-cloudinit"
   unmount_iso      = true
-  vm_name          = "provisioning-debian-template"
-  vm_id            = 9000
+  vm_name          = "provisioning-pihole-template"
+  vm_id            = 9002
 
   boot_command = [
     "<tab><wait>",
@@ -55,5 +50,5 @@ source "proxmox" "debian_cloudinit" {
 }
 
 build {
-  sources = ["source.proxmox.debian_cloudinit"]
+  sources = ["source.proxmox.pihole_cloudinit"]
 }

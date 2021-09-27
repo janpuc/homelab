@@ -3,7 +3,7 @@ resource "proxmox_vm_qemu" "fileserver" {
   target_node = var.proxmox_node
   vmid        = 801
 
-  clone   = "debian-cloudinit"
+  clone   = "fileserver-cloudinit"
   os_type = "cloudinit"
   boot    = "c"
 

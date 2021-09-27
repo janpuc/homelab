@@ -35,6 +35,18 @@ variable "fileserver_user" {
   default     = "debian"
 }
 
+variable "pihole_ip_address" {
+  type        = string
+  description = "IP address of pi-hole."
+}
+
+variable "pihole_user" {
+  type        = string
+  description = "User account of the pi-hole."
+  default     = "debian"
+}
+
+
 variable "master_node_ip_address" {
   type        = string
   description = "IP address of k3os node."
