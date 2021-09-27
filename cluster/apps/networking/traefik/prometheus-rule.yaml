@@ -60,10 +60,9 @@ spec:
             summary: "Traefik has too many open connecrions."
             description: "Traefik is reporting {{ $value }} of open connections on entrypoint
               {{ $labels.entrypoint }}"
-            expr: |
-              avg(traefik_entrypoint_open_connections{job="traefik"})
-                > 5
-            for: 1m
-            labels:
-              severity: critical
-              
+          expr: |
+            avg(traefik_entrypoint_open_connections{job="traefik"})
+              > 5
+          for: 1m
+          labels:
+            severity: critical
