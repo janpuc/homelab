@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: traefik-crd-sourcs
+  name: traefik-crd-source
   namespace: flux-system
 spec:
   interval: 30m
