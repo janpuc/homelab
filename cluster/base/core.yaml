@@ -13,7 +13,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  descryption:
+  decryption:
     provider: sops
     secretRef:
       name: sops-gpg
