@@ -1,7 +1,7 @@
 variable "key_fp" {
   type        = string
   description = "Fingerprint of the GPG key used by SOPS."
-  default     = ""
+  default     = "E75F4D411C53DDB8709A02224E7FB184C33A112A"
 }
 
 resource "proxmox_vm_qemu" "k3os_master" {
