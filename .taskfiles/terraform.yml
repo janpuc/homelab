@@ -24,6 +24,16 @@ tasks:
         -target=proxmox_vm_qemu.fileserver
     silent: true
 
+  apply:k3os:
+    desc: Apply terraform changes for k3os resource
+    cmds:
+      - >
+        terraform
+        -chdir={{.TERRAFORM_DIR}}
+        apply
+        -target=proxmox_vm_qemu.k3os_master
+    silent: true
+
   destroy:
     desc: Destroy terraform resources
     cmds:
@@ -41,6 +51,16 @@ tasks:
         -chdir={{.TERRAFORM_DIR}}
         destroy
         -target=proxmox_vm_qemu.fileserver
+    silent: true
+
+  destroy:k3os:
+    desc: Destroy k3os terraform resource
+    cmds:
+      - >
+        terraform
+        -chdir={{.TERRAFORM_DIR}}
+        destroy
+        -target=proxmox_vm_qemu.k3os_master
     silent: true
 
   init:
