@@ -1,31 +1,31 @@
 variable "nameserver" {
-  type = string
+  type        = string
   description = "IP of the nameserver."
 }
 
 variable "master_node_ip" {
-  type = string
+  type        = string
   description = "IP address used by the master k3s node."
 }
 
 variable "github_username" {
-  type = string
+  type        = string
   description = "GitHub username from which to add an autorized SSH key."
 }
 
 source "proxmox" "k3os_cloudinit" {
-  proxmox_url = "https://${var.proxmox_ip}:${var.proxmox_port}/api2/json"
-  username = var.proxmox_username
-  password = var.proxmox_password
-  node = var.proxmox_node
-  iso_url = "https://github.com/rancher/k3os/releases/download/v0.20.11-k3s1r1/k3os-amd64.iso"
-  iso_storage_pool = var.proxmox_iso_storage_pool
-  iso_checksum = "sha256:b7b3fff6a4e1ba9602480b67870d4345ae84410b49421691c8596310bd856c85"
+  proxmox_url              = "https://${var.proxmox_ip}:${var.proxmox_port}/api2/json"
+  username                 = var.proxmox_username
+  password                 = var.proxmox_password
+  node                     = var.proxmox_node
+  iso_url                  = "https://github.com/rancher/k3os/releases/download/v0.20.11-k3s1r1/k3os-amd64.iso"
+  iso_storage_pool         = var.proxmox_iso_storage_pool
+  iso_checksum             = "sha256:b7b3fff6a4e1ba9602480b67870d4345ae84410b49421691c8596310bd856c85"
   insecure_skip_tls_verify = true
 
-  cloud_init = true
+  cloud_init              = true
   cloud_init_storage_pool = "local-lvm"
-  cores = 2
+  cores                   = 2
   disks {
     disk_size         = "50G"
     format            = "qcow2"
@@ -81,9 +81,9 @@ source "proxmox" "k3os_cloudinit" {
     "/config.yaml" = templatefile(
       "${path.cwd}/server/packer/templates/k3os-config.pkrtpl.hcl",
       {
-        hostname = "k3os-master",
-        node_ip = var.master_node_ip,
-        nameserver = var.nameserver,
+        hostname        = "k3os-master",
+        node_ip         = var.master_node_ip,
+        nameserver      = var.nameserver,
         github_username = var.github_username
       }
     )

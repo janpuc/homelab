@@ -7,13 +7,13 @@ tasks:
     cmds:
       - flux reconcile source git flux-system
     silent: true
-  
+
   get:
     desc: List all flux resources
     cmds:
       - flux get all -A
     silent: true
-  
+
   hr:
     desc: List all Helm releases
     cmds:
@@ -31,7 +31,7 @@ tasks:
     cmds:
       - flux get sources chart -A
     silent: true
-  
+
   k:
     desc: List all Kustomization
     cmds:

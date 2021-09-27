@@ -22,8 +22,8 @@ tasks:
         build
         --only=proxmox.fileserver_cloudinit
         server/packer/images
-    silent: true  
-    
+    silent: true
+
   pihole:
     descs: Build pihole packer image
     cmds:
