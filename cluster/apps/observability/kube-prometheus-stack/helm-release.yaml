@@ -22,7 +22,7 @@ spec:
       config:
         global:
           slack_api_url: "${SECRET_ALERT_MANAGER_SLACK_WEBHOOK}"
-          reslove_timeout: 5m
+          resolve_timeout: 5m
         receivers:
           - name: "null"
           - name: "slack"

@@ -39,7 +39,7 @@ spec:
         - alert: CertManagerNotReady
           expr: |
             max by (name, exported_namespace, namespace, condition) (
-              certmanager_certificate_ready_status{condition!="True" == 1})
+            certmanager_certificate_ready_status{condition!="True"} == 1)
           for: 10m
           labels:
             severity: critical
