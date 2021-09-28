@@ -6,3 +6,4 @@ resources:
   - kube-system
   - networking
   - observability
+  - organization
