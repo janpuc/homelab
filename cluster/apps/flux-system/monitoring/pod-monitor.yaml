@@ -1,6 +1,6 @@
 ---
 apiVersion: monitoring.coreos.com/v1
-kind: podMonitor
+kind: PodMonitor
 metadata:
   name: flux-system
   labels:
