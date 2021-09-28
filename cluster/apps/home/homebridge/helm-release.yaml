@@ -40,3 +40,7 @@ spec:
           - hosts:
               - "homebridge.${SECRET_DOMAIN}"
             secretName: "homebridge-${SECRET_DOMAIN//./-}-tls"
+    persistance:
+      config:
+        enabled: true
+        existingClaim: homebridge-config
