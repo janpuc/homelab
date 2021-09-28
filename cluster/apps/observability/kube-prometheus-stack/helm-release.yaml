@@ -45,7 +45,7 @@ spec:
                   {{- end }}
                 text: >-
                   {{ with index .Alerts 0 -}}
-                    :chart_with_upwards_trend: *<{{ .GeneraturURL }}|Graph>*
+                    :chart_with_upwards_trend: *<{{ .GeneratorURL }}|Graph>*
                     {{- if .Annotations.runbook }}   :notebook: *<{{ .Annotations.runbook }}|Runbook*>{{ end }}
                   {{ end }}
 
