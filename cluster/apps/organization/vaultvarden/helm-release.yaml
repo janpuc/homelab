@@ -2,15 +2,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: homebridge
-  namespace: home
+  name: vaultvarden
+  namespace: organization
 spec:
   interval: 5m
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: homebridge
-      version: 4.1.1
+      chart: vaultvarden
+      version: 3.1.1
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -18,10 +18,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/oznu/homebridge
-    replicas: 1
-    env:
-      TZ: "Europe/Warsaw"
+      repository: vaultvarden/server
+      tag: 1.21.0
     ingress:
       main:
         enabled: true
@@ -30,17 +28,17 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           hajimari.io/enable: "true"
-          hajimari.io/icon: "home-automation"
+          hajimari.io/icon: "lock"
         hosts:
-          - host: "homebridge.${SECRET_DOMAIN}"
+          - host: "vaultvarden.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - "homebridge.${SECRET_DOMAIN}"
-            secretName: "homebridge-${SECRET_DOMAIN//./-}-tls"
+              - "vaultvarden.${SECRET_DOMAIN}"
+            secretName: "vaultvarden-${SECRET_DOMAIN//./-}-tls"
     persistence:
       config:
         enabled: true
-        existingClaim: homebridge-config
+        existingClaim: vaultvarden-config
