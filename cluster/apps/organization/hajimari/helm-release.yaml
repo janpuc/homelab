@@ -33,15 +33,6 @@ spec:
         - name: Pi-hole
           url: "http://pihole.${SECRET_DOMAIN}/admin"
           icon: pi-hole
-        - name: Proxmox
-          url: "https://proxmox.${SECRET_DOMAIN}:8006"
-          icon: server-network
-        - name: OpenVPN
-          url: "https://ovpn.${SECRET_DOMAIN}:943"
-          icon: vpn
-        - name: Router
-          url: "http://router.${SECRET_DOMAIN)"
-          icon: router-wireless
       groups:
         - name: Cloud
           links:
