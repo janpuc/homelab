@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: vaultvarden-config
+  name: vaultwarden-config
   namespace: organization
 spec:
   accessModes:
