@@ -46,6 +46,16 @@ variable "pihole_user" {
   default     = "debian"
 }
 
+variable "homebridge_ip_address" {
+  type        = string
+  description = "IP address of homebridge."
+}
+
+variable "homebridge_user" {
+  type        = string
+  description = "User account of the homebridge."
+  default     = "debian"
+}
 
 variable "master_node_ip_address" {
   type        = string

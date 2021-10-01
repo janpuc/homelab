@@ -34,6 +34,16 @@ tasks:
         -target=proxmox_vm_qemu.pihole
     silent: true
 
+  apply:homebridge:
+    desc: Apply terraform changes for homebridge resource
+    cmds:
+      - >
+        terraform
+        -chdir={{.TERRAFORM_DIR}}
+        apply
+        -target=proxmox_vm_qemu.homebridge
+    silent: true
+
   apply:k3os:
     desc: Apply terraform changes for k3os resource
     cmds:
@@ -73,6 +83,15 @@ tasks:
         -target=proxmox_vm_qemu.pihole
     silent: true
 
+  destroy:homebridge:
+    desc: Destroy homebridge terraform resource
+    cmds:
+      - >
+        terraform
+        -chdir={{.TERRAFORM_DIR}}
+        destroy
+        -target=proxmox_vm_qemu.homebridge
+    silent: true
   destroy:k3os:
     desc: Destroy k3os terraform resource
     cmds:

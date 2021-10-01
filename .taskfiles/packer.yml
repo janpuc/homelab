@@ -34,6 +34,16 @@ tasks:
         server/packer/images
     silent: true
 
+  homebridge:
+    descs: Build homebridge packer image
+    cmds:
+      - >
+        packer
+        build
+        --only=proxmox.homebridge_cloudinit
+        server/packer/images
+    silent: true
+
   k3os:
     descs: Build k3os packer image
     cmds:
